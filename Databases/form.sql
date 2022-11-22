@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2022 at 02:03 PM
+-- Generation Time: Nov 22, 2022 at 02:12 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -40,6 +40,32 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mahasiswas`
+--
+
+CREATE TABLE `mahasiswas` (
+  `nim` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `umur` int(11) NOT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kota` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kelas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jurusan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `mahasiswas`
+--
+
+INSERT INTO `mahasiswas` (`nim`, `nama`, `umur`, `alamat`, `kota`, `kelas`, `jurusan`, `created_at`, `updated_at`) VALUES
+('G.231.21.0080', 'M.Hasif Rahman Al Zaki', 20, 'Kepo', 'Batam', 'B Sore', 'IPS', '2022-11-22 04:44:15', '2022-11-22 05:35:47'),
+('G.231.21.0081', 'Dian Widyaningrum', 20, 'Yo Nda Tau Ko Tanya Saya', 'semarang', 'B Pagi', 'Akuntansi', '2022-11-22 05:34:26', '2022-11-22 05:36:10');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -58,7 +84,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_10_30_125629_create_posts_table', 1);
+(5, '2022_10_30_125629_create_posts_table', 1),
+(6, '2022_11_22_050747_create_mahasiswa_table', 1),
+(7, '2022_11_22_094435_create_mahasiswas_table', 1),
+(8, '2022_11_22_113613_create_mahasiswas_table', 2);
 
 -- --------------------------------------------------------
 
@@ -110,8 +139,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'sdfgfdgg', 'gdfggdfg', '2022-10-30 05:58:52', '2022-10-30 05:58:52'),
-(2, 'dfgdggdf', 'sdggdg', '2022-10-30 05:59:53', '2022-10-30 05:59:53');
+(1, 'la', 'ravel', '2022-11-22 04:29:30', '2022-11-22 04:29:30'),
+(2, 'la', 'ravel', '2022-11-22 04:29:31', '2022-11-22 04:29:31');
 
 -- --------------------------------------------------------
 
@@ -140,6 +169,12 @@ CREATE TABLE `users` (
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `mahasiswas`
+--
+ALTER TABLE `mahasiswas`
+  ADD PRIMARY KEY (`nim`);
 
 --
 -- Indexes for table `migrations`
@@ -188,7 +223,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
